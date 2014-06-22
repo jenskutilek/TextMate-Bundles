@@ -65,6 +65,17 @@
 		</dict>
 		<dict>
 			<key>name</key>
+			<string>Plaintext</string>
+			<key>scope</key>
+			<string>text.plain</string>
+			<key>settings</key>
+			<dict>
+				<key>fontName</key>
+				<string>Triplicate T4p</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
 			<string>Foldings</string>
 			<key>scope</key>
 			<string>deco.folding</string>
