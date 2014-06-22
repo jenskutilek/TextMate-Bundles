@@ -11,6 +11,12 @@
 	<key>patterns</key>
 	<array>
 		<dict>
+			<key>match</key>
+			<string>^\s*&lt;(?i:GlyphOrder|cmap|head|hhea|hmtx|maxp|name|OS_2|post|cvt|fpgm|glyf|loca|prep|CFF|VORG|EBDT|EBLC|EBSC|BASE|GDEF|GPOS|GSUB|JSTF|DSIG|gasp|hdmx|kern|LTSH|PCLT|VDMX|vhea|vmtx|feat|morx|sbit|sbix)&gt;</string>
+			<key>name</key>
+			<string>text.xml.ttx.sfnttable</string>
+		</dict>
+		<dict>
 			<key>begin</key>
 			<string>(&lt;\?)\s*([-_a-zA-Z0-9]+)</string>
 			<key>captures</key>
