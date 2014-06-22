@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>contactEmailRot13</key>
+	<string></string>
+	<key>contactName</key>
+	<string>Jens Kutilek</string>
+	<key>description</key>
+	<string>A bundle for the typographice connaisseur.</string>
+	<key>name</key>
+	<string>Typography</string>
+	<key>uuid</key>
+	<string>FC227BF1-CA98-4EE0-8341-059EBF22E8DF</string>
+</dict>
+</plist>

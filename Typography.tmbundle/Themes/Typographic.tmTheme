@@ -4,6 +4,8 @@
 <dict>
 	<key>author</key>
 	<string>Jens Kutilek</string>
+	<key>colorSpaceName</key>
+	<string>sRGB</string>
 	<key>gutterSettings</key>
 	<dict>
 		<key>background</key>
@@ -49,8 +51,6 @@
 			<string>comment</string>
 			<key>settings</key>
 			<dict>
-				<key>fontName</key>
-				<string>Triplicate T4p</string>
 				<key>fontStyle</key>
 				<string>italic</string>
 				<key>foreground</key>
@@ -147,8 +147,6 @@
 			<string>string.quoted.double.block, string.quoted.single.block</string>
 			<key>settings</key>
 			<dict>
-				<key>fontName</key>
-				<string>Triplicate T4p</string>
 				<key>fontStyle</key>
 				<string>italic</string>
 				<key>foreground</key>
@@ -214,10 +212,8 @@
 			<string>entity.name.type</string>
 			<key>settings</key>
 			<dict>
-				<key>fontName</key>
-				<string>Triplicate C4c</string>
 				<key>fontStyle</key>
-				<string>regular</string>
+				<string>bold</string>
 				<key>foreground</key>
 				<string>#cd0000</string>
 			</dict>
@@ -492,6 +488,6 @@
 		</dict>
 	</array>
 	<key>uuid</key>
-	<string>2780A80D-D44E-41CA-9D9A-F915B759BB28</string>
+	<string>E66CF6D3-ED16-4116-8635-1C8744599680</string>
 </dict>
 </plist>
