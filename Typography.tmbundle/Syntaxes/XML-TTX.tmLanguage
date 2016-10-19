@@ -12,7 +12,7 @@
 	<array>
 		<dict>
 			<key>match</key>
-			<string>^\s*&lt;(?i:GlyphOrder|cmap|head|hhea|hmtx|maxp|name|OS_2|post|cvt|fpgm|glyf|loca|prep|gasp|CFF|CFF2|VORG|SVG|EBDT|EBLC|EBSC|CBDT|CBLC|sbix|BASE|GDEF|GPOS|GSUB|JSTF|MATH|avar|cvar|fvar|gvar|HVAR|MVAR|VVAR|COLR|CPAL|DSIG|hdmx|kern|LTSH|MERG|meta|STAT|PCLT|VDMX|vhea|vmtx|feat|morx|sbit)&gt;</string>
+			<string>^\s*&lt;(?i:GlyphOrder|cmap|head|hhea|hmtx|maxp|name|OS_2|post|cvt|fpgm|glyf|loca|prep|gasp|CFF|CFF2|VORG|SVG|EBDT|EBLC|EBSC|CBDT|CBLC|sbix|BASE|GDEF|GPOS|GSUB|JSTF|MATH|avar|cvar|fvar|gvar|HVAR|MVAR|VVAR|COLR|CPAL|DSIG|hdmx|kern|LTSH|MERG|meta|STAT|PCLT|VDMX|vhea|vmtx|feat|morx|sbit|bsln|fmtx|kerx|trak)&gt;</string>
 			<key>name</key>
 			<string>text.xml.ttx.sfnttable</string>
 		</dict>
