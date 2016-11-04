@@ -137,7 +137,7 @@
 				<key>fontStyle</key>
 				<string>regular</string>
 				<key>foreground</key>
-				<string>#cd0000</string>
+				<string>#aa0000</string>
 			</dict>
 		</dict>
 		<dict>
@@ -150,7 +150,7 @@
 				<key>fontStyle</key>
 				<string>italic</string>
 				<key>foreground</key>
-				<string>#cd0000</string>
+				<string>#aa0000</string>
 			</dict>
 		</dict>
 		<dict>
@@ -202,7 +202,7 @@
 				<key>fontStyle</key>
 				<string>italic</string>
 				<key>foreground</key>
-				<string>#cd0000</string>
+				<string>#aa0000</string>
 			</dict>
 		</dict>
 		<dict>
@@ -215,7 +215,7 @@
 				<key>fontStyle</key>
 				<string>bold</string>
 				<key>foreground</key>
-				<string>#cd0000</string>
+				<string>#aa0000</string>
 			</dict>
 		</dict>
 		<dict>
@@ -250,7 +250,7 @@
 				<key>fontStyle</key>
 				<string></string>
 				<key>foreground</key>
-				<string>#cd0000</string>
+				<string>#aa0000</string>
 			</dict>
 		</dict>
 		<dict>
