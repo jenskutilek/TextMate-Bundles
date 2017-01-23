@@ -1,0 +1,58 @@
+%YAML 1.2
+---
+name: XML-TTX
+file_extensions: [ttx]
+scope: text.xml.ttx
+
+contexts:
+  main:
+    - match: ""
+      push: Packages/XML/XML.sublime-syntax
+      with_prototype:
+        - match: (<)(assembly)(>)
+          captures:
+            1: punctuation.definition.tag.begin.xml
+            2: entity.name.tag.xml
+            3: punctuation.definition.tag.end.xml
+          push: assembly
+
+        - match: (<)(GlyphOrder|cmap|head|hhea|hmtx|maxp|name|OS_2|post|cvt|fpgm|glyf|loca|prep|gasp|CFF|CFF2|VORG|SVG|EBDT|EBLC|EBSC|CBDT|CBLC|sbix|BASE|GDEF|GPOS|GSUB|JSTF|MATH|avar|cvar|fvar|gvar|HVAR|MVAR|VVAR|COLR|CPAL|DSIG|hdmx|kern|LTSH|MERG|meta|STAT|PCLT|VDMX|vhea|vmtx|feat|morx|sbit|bsln|fmtx|kerx|trak)(>)
+          captures:
+            1: punctuation.definition.tag.begin.xml
+            2: entity.name.tag.xml, text.xml.ttx.sfnttable
+            3: punctuation.definition.tag.end.xml
+
+  assembly:
+    - meta_content_scope: string.block.assembly
+    - match: (</)(assembly)(>)
+      captures:
+        1: punctuation.definition.tag.begin.xml
+        2: entity.name.tag.xml
+        3: punctuation.definition.tag.end.xml
+      pop: true
+    
+    - match: (\/\*)(\*\/)
+      captures:
+        1: punctuation.definition.comment.begin.xml
+        2: punctuation.definition.comment.end.xml
+    
+    - match: (\/\*)(.+)(\*\/)
+      captures:
+        1: punctuation.definition.comment.begin.xml
+        2: comment.block.assembly
+        3: punctuation.definition.comment.end.xml
+    
+    - match: (\[)(\])
+      captures:
+        1: meta.tag.parameters.begin.assembly
+        2: meta.tag.parameters.end.assembly
+
+    - match: (\[)([ 01]+)(\])
+      captures:
+        1: meta.tag.parameters.begin.assembly
+        2: meta.tag.parameters.assembly
+        3: meta.tag.parameters.end.assembly
+      #scope: meta.tag.parameters.assembly
+    
+    - match: \b[0-9]+\b
+      scope: constant.numeric.assembly
