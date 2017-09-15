@@ -16,11 +16,11 @@ contexts:
             3: punctuation.definition.tag.end.xml
           push: assembly
 
-        - match: (<)(GlyphOrder|cmap|head|hhea|hmtx|maxp|name|OS_2|post|cvt|fpgm|glyf|loca|prep|gasp|CFF|CFF2|VORG|SVG|EBDT|EBLC|EBSC|CBDT|CBLC|sbix|BASE|GDEF|GPOS|GSUB|JSTF|MATH|avar|cvar|fvar|gvar|HVAR|MVAR|VVAR|COLR|CPAL|DSIG|hdmx|kern|LTSH|MERG|meta|STAT|PCLT|VDMX|vhea|vmtx|feat|morx|sbit|bsln|fmtx|kerx|trak|TSI.)(>)
+        - match: '(<)((GlyphOrder|cmap|head|hhea|hmtx|maxp|name|OS_2|post|cvt|fpgm|glyf|loca|prep|gasp|CFF|CFF2|VORG|SVG|EBDT|EBLC|EBSC|CBDT|CBLC|sbix|BASE|GDEF|GPOS|GSUB|JSTF|MATH|avar|cvar|fvar|gvar|HVAR|MVAR|VVAR|COLR|CPAL|DSIG|hdmx|kern|LTSH|MERG|meta|STAT|PCLT|VDMX|vhea|vmtx|feat|morx|sbit|bsln|fmtx|kerx|trak|TSI.)(\s+.+)?)(>)'
           captures:
             1: punctuation.definition.tag.begin.xml
-            2: entity.name.tag.xml, text.xml.ttx.sfnttable
-            3: punctuation.definition.tag.end.xml
+            2: entity.name.tag.xml text.xml.ttx.sfnttable
+            5: punctuation.definition.tag.end.xml
 
   assembly:
     - meta_content_scope: string.block.assembly
