@@ -16,7 +16,7 @@ contexts:
             3: punctuation.definition.tag.end.xml
           push: assembly
 
-        - match: '(<)((GlyphOrder|cmap|head|hhea|hmtx|maxp|name|OS_2|post|cvt|fpgm|glyf|loca|prep|gasp|CFF|CFF2|VORG|SVG|EBDT|EBLC|EBSC|CBDT|CBLC|sbix|BASE|GDEF|GPOS|GSUB|JSTF|MATH|avar|cvar|fvar|gvar|HVAR|MVAR|VVAR|COLR|CPAL|DSIG|hdmx|kern|LTSH|MERG|meta|STAT|PCLT|VDMX|vhea|vmtx|feat|morx|sbit|bsln|fmtx|kerx|trak|TSI.)(\s+.+)?)(>)'
+        - match: '(<)((GlyphOrder|BASE|CBDT|CBLC|CFF|CFF2|COLR|CPAL|DSIG|EBDT|EBLC|EBSC|FFTM|Feat|GDEF|GMAP|GPKG|GPOS|GSUB|Glat|Gloc|HVAR|JSTF|LTSH|MATH|MERG|META|MVAR|OS_2|PCLT|SING|STAT|SVG|Silf|Sill|TSI.|TTFA|VDMX|VORG|VVAR|ankr|avar|bsln|cidg|cmap|cvar|cvt|feat|fmtx|fpgm|fvar|gasp|gcid|glyf|gvar|hdmx|head|hhea|hmtx|kern|kerx|lcar|loca|ltag|maxp|meta|mort|morx|name|opbd|post|prep|prop|sbit|sbix|trak|vhea|vmtx)(\s+.+)?)(>)'
           captures:
             1: punctuation.definition.tag.begin.xml
             2: entity.name.tag.xml text.xml.ttx.sfnttable
