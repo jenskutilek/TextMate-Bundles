@@ -1,0 +1,45 @@
+%YAML 1.2
+---
+# http://www.sublimetext.com/docs/3/syntax.html
+name: Glyphs
+file_extensions:
+  - glyphs
+#first_line_match: '^{$'
+scope: text.plist
+contexts:
+  main:
+    - match: '({)'
+      captures:
+        1: punctuation.definition.dict.begin.plist
+      push:
+        - match: '(})'
+          captures:
+            1: punctuation.definition.dict.end.plist
+          pop: true
+        - include: scope:text.plist
+    - match: '(\()'
+      captures:
+        1: punctuation.definition.list.begin.plist
+      push:
+        - match: '(\))'
+          captures:
+            1: punctuation.definition.list.end.plist
+          pop: true
+        - include: scope:text.plist
+    - match: '^([A-Za-z\.]+)[ =|;]'
+      captures:
+        1: entity.name.key.plist
+    - match: '"'
+      push: string
+    - match: (0|[0-9]*)[,|;]
+      captures:
+        1: constant.integer.plist
+    - match: (0|[0-9]*\.0|[0-9]*)[,|;]
+      captures:
+        1: constant.float.plist
+  string:
+    - meta_scope: string.quoted.double.plist
+    - match: '\\[0-9]*'
+      scope: constant.character.escape.plist
+    - match: '"'
+      pop: true
