@@ -8,6 +8,10 @@ file_extensions:
 scope: text.plist
 contexts:
   main:
+    - match: '^(glyphname) = "?([A-Za-z\-]+)"?;$'
+      captures:
+        1: entity.name.key.plist
+        2: entity.name.glyphname.glyphs
     - match: '({)'
       captures:
         1: punctuation.definition.dict.begin.plist
