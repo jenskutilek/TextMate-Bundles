@@ -12,6 +12,10 @@ contexts:
       captures:
         1: entity.name.key.plist
         2: entity.name.glyphname.glyphs
+    - match: '^(unicode) = "?([0-9A-F]+)"?;$'
+      captures:
+        1: entity.name.key.plist
+        2: entity.name.unicode.glyphs
     - match: '({)'
       captures:
         1: punctuation.definition.dict.begin.plist

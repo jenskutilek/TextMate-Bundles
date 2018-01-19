@@ -5,15 +5,11 @@
 	<key>name</key>
 	<string>Symbol List: Glyphs</string>
 	<key>scope</key>
-	<string>entity.name.glyphname.glyphs</string>
+	<string>entity.name.glyphname.glyphs, entity.name.unicode.glyphs</string>
 	<key>settings</key>
 	<dict>
 		<key>showInSymbolList</key>
 		<integer>1</integer>
-		<key>symbolTransformation</key>
-		<string>
-		s/^/g /;
-		</string>
 	</dict>
 	<key>uuid</key>
 	<string>AD2D17E6-0DAE-488A-B231-9DDDFF887945</string>
