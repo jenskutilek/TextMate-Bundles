@@ -1,0 +1,35 @@
+%YAML 1.2
+---
+name: TTX Assembly
+file_extensions: [asm]
+scope: text.xml.ttx.assembly
+
+contexts:
+  main:
+    - match: ""
+    - meta_content_scope: string.block.assembly
+    - match: (\/\*)(\*\/)
+      captures:
+        1: punctuation.definition.comment.begin.xml
+        2: punctuation.definition.comment.end.xml
+    
+    - match: (\/\*)(.+)(\*\/)
+      captures:
+        1: punctuation.definition.comment.begin.xml
+        2: comment.block.assembly
+        3: punctuation.definition.comment.end.xml
+    
+    - match: (\[)(\])
+      captures:
+        1: meta.tag.parameters.begin.assembly
+        2: meta.tag.parameters.end.assembly
+
+    - match: (\[)([ 01]+)(\])
+      captures:
+        1: meta.tag.parameters.begin.assembly
+        2: meta.tag.parameters.assembly
+        3: meta.tag.parameters.end.assembly
+      #scope: meta.tag.parameters.assembly
+    
+    - match: \b[0-9]+\b
+      scope: constant.numeric.assembly
