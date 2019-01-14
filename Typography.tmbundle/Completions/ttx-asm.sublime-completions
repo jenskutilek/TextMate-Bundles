@@ -1,0 +1,26 @@
+{
+   "scope": "text.xml.ttx.assembly",
+
+   "completions":
+   [
+      { "trigger": "svtca\tSet Vectors To Coordinate Axis [Y|X]", "contents": "SVTCA[${0:0}]" },
+      { "trigger": "spvtca\t[Y|X]", "contents": "SPVTCA[${0:0}]" },
+      { "trigger": "sfvtca\t[Y|X]", "contents": "SFVTCA[${0:0}]" },
+      { "trigger": "spvtl\t[r|R]", "contents": "SPVTL[${0:0}]" },
+      { "trigger": "sfvtl\t[r|R]", "contents": "SFVTL[${0:0}]" },
+      { "trigger": "mdap\tMove Direct Absolute Point [r|R]", "contents": "MDAP[${0:1}]" },
+      { "trigger": "iup\tInterpolate Untouched Point [Y|X]", "contents": "IUP[${0:0}]" },
+      { "trigger": "shp\tShift Point [2|1]", "contents": "SHP[${0:1}]" },
+      { "trigger": "shc\tShift Contour[2|1]", "contents": "SHC[${0:1}]" },
+      { "trigger": "shz\tShift Zone [2|1]", "contents": "SHZ[${0:1}]" },
+      { "trigger": "msirp\tMove Stack-indirect Relative Point [m|M]", "contents": "MSIRP[${0:1}]" },
+      { "trigger": "miap\tMove Indirect Absolute Point [r|R]", "contents": "MIAP[${0:1}]" },
+      { "trigger": "gc\tGet Coordinate [N|O]", "contents": "GC[${0:0}]" },
+      { "trigger": "md\tMeasure Distance [N|O]", "contents": "MD[${0:0}]" },
+      { "trigger": "round\tRound [Gr|Bl|Wh]", "contents": "ROUND[${0:00}]" },
+      { "trigger": "nround\tNo Round [Gr|Bl|Wh]", "contents": "NROUND[${0:00}]" },
+      { "trigger": "sdpvtl\tSet Dual Projection Vector To Line [r|R]", "contents": "SDPVTL[${0:0}]" },
+      { "trigger": "mdrp\tMove Direct Relative Point [m|M <|> r|R Gr|Bl|Wh]", "contents": "MDRP[${0:11100}]" },
+      { "trigger": "mirp\tMove Inirect Relative Point [m|M <|> r|R Gr|Bl|Wh]", "contents": "MIRP[${0:11100}]" },
+   ]
+}
