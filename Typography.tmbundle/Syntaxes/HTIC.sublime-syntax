@@ -1,0 +1,58 @@
+%YAML 1.2
+---
+name: HumbleType Code
+file_extensions: [hti]
+scope: text.htic
+
+contexts:
+  main:
+    - include: comments
+    - match: ([A-Za-z0-9]+) +?({)
+      captures:
+        1: text.htic.identifier
+        2: punctuation.definition.block.begin
+      push:
+        assembly
+
+  assembly:
+    - meta_content_scope: string.block.assembly
+    - include: comments
+    - match: (\/\*)(\*\/)
+      captures:
+        1: punctuation.definition.comment.begin.xml
+        2: punctuation.definition.comment.end.xml
+
+    - match: (\/\*)(.+)(\*\/)
+      captures:
+        1: punctuation.definition.comment.begin.xml
+        2: comment.block.assembly
+        3: punctuation.definition.comment.end.xml
+    
+    - match: (\[)(\])
+      captures:
+        1: meta.tag.parameters.begin.assembly
+        2: meta.tag.parameters.end.assembly
+
+    - match: (\[)([ 01]+)(\])
+      captures:
+        1: meta.tag.parameters.begin.assembly
+        2: meta.tag.parameters.assembly
+        3: meta.tag.parameters.end.assembly
+      #scope: meta.tag.parameters.assembly
+    
+    - match: \b[0-9]+\b
+      scope: constant.numeric.assembly
+
+    - match: (})
+      captures:
+        1: punctuation.definition.block.end
+      pop: true
+
+  comments:
+    - match: "#"
+      scope: punctuation.definition.comment.htic
+      push:
+        - meta_scope: comment.line.number-sign.htic
+        - match: \n
+          pop: true
+      
