@@ -49,7 +49,7 @@ contexts:
       pop: true
 
   comments:
-    - match: "#"
+    - match: " +#|^#"
       scope: punctuation.definition.comment.htic
       push:
         - meta_scope: comment.line.number-sign.htic

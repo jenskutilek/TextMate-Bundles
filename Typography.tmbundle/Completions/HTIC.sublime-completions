@@ -1,0 +1,112 @@
+{
+  "scope": "text.htic",
+  "completions":
+  [
+    /* Arithmetic */
+    { "trigger": "abs\tAbsolute value", "contents": "ABS ${1:n}" },
+    { "trigger": "add\tAdd", "contents": "ADD ${1:n2} ${2:n1}" },
+    { "trigger": "ceiling\tCeiling", "contents": "CEILING ${1:value_F26dot6}" },
+    { "trigger": "div\tDivide", "contents": "DIV ${1:n2} ${2:n1} # n2 / n1" },
+    { "trigger": "floor\tFloor", "contents": "FLOOR ${1:value_F26dot6}" },
+    { "trigger": "max\tMaximum of top two stack elements", "contents": "MAX ${1:e2} ${2:e1}" },
+    { "trigger": "min\tMinimum of top two stack elements", "contents": "MIN ${1:e2} ${2:e1}" },
+    { "trigger": "mul\tMultiply", "contents": "MUL ${1:n2} ${2:n1}" },
+    { "trigger": "neg\tNegate", "contents": "NEG ${1:value_F26dot6}" },
+    { "trigger": "sub\tSubtract", "contents": "SUB ${1:n2} ${2:n1} # n2 - n1" },
+
+    /* Control */
+    { "trigger": "if\tIf", "contents": "IF ${1:e}\n  ${2:# ...}\n${3:ELSE\n  ${4:# ...}}\nEIF" },
+    { "trigger": "else\tElse", "contents": "ELSE" },
+    { "trigger": "eif\tEnd if", "contents": "EIF" },
+    { "trigger": "jmpr\tJump", "contents": "JMPR ${1:offset_int32}" },
+    { "trigger": "jrof\tJump relative on false", "contents": "JROF ${1:offset_int32} ${2:bool_uint32}" },
+    { "trigger": "jrot\tJump relative on true", "contents": "JROT ${1:offset_int32} ${2:bool_uint32}" },
+
+    /* CVT */
+    { "trigger": "rcvt\tRead Control Value Table", "contents": "RCVT ${1:location_uint32}" },
+    { "trigger": "wcvtf\tWrite Control Value Table in FUnits", "contents": "WCVTF ${1:location_uint32} ${2:value_uint32}" },
+    { "trigger": "wcvtp\tWrite Control Value Table in Pixel units", "contents": "WCVTP ${1:location_uint32} ${2:value_F26Dot6}" },
+
+    /* Data */
+    { "trigger": "gc\tGet coordinate [N|O]", "contents": "GC[${1:N}]" },
+    { "trigger": "md\tMeasure distance [N|O]", "contents": "MD[${1:N}]" },
+    { "trigger": "mppem\tMeasure Pixels Per EM", "contents": "MPPEM" },
+    { "trigger": "mps\tMeasure Point Size", "contents": "MPS" },
+    { "trigger": "scfs\tSets Coordinate From the Stack using projection_vector and freedom_vector", "contents": "SCFS ${1:p_uint32} ${2:value_F26Dot6}" },
+
+    /* Debug */
+    { "trigger": "debug\tDEBUG call", "contents": "DEBUG ${1:uint32}" },
+
+    /* Engine */
+    { "trigger": "nround\tNo round [Gr|Bl|Wh]", "contents": "NROUND[${1:Gr}]" },
+    { "trigger": "round\tRound [Gr|Bl|Wh]", "contents": "ROUND[${1:Gr}]" },
+
+    /* Exceptions */
+
+    /* Functions */
+
+    /* Graphics State */
+    { "trigger": "flipoff\tSet the auto_flip boolean to off", "contents": "FLIPOFF" },
+    { "trigger": "flipon\tSet the auto_flip boolean to on", "contents": "FLIPON" },
+    { "trigger": "gfv\tGet Freedom_Vector", "contents": "GFV" },
+    { "trigger": "gpv\tGet Projection_Vector", "contents": "GPV" },
+    { "trigger": "instctrl\tInstruction execution control", "contents": "INSTCTRL ${2:value} ${1:selector}" },
+    { "trigger": "rdtg\tRound down to grid", "contents": "RDTG" },
+    { "trigger": "roff\tRound off", "contents": "ROFF" },
+    { "trigger": "rtdg\tRound to double grid", "contents": "RTDG" },
+    { "trigger": "rtg\tRound to grid", "contents": "RTG" },
+    { "trigger": "rthg\tRound to half grid", "contents": "RTHG" },
+    { "trigger": "rutg\tRound up to grid", "contents": "RUTG" },
+    { "trigger": "s45round\tSuper round 45 degrees", "contents": "S45ROUND ${1:value_uint32}" },
+    { "trigger": "scanctrl\tScan conversion control", "contents": "SCANCTRL ${1:flags}" },
+    { "trigger": "scantype\tScantype", "contents": "SCANTYPE ${1:uint16}" },
+    { "trigger": "scvtci\tSet control value table cut in", "contents": "SCVTCI ${1:value_F26Dot6}" },
+    { "trigger": "sdb\tSet Delta_Base", "contents": "SDB ${1:value_uint32}" },
+    { "trigger": "sds\tSet Delta_Shift", "contents": "SDS ${1:value_uint32}" },
+    { "trigger": "sdpvtl\tSet dual projection vector to line [r|R]", "contents": "SDPVTL[${1:r}] ${3:p2_uint32} ${2:p1_uint32}" },
+    { "trigger": "sfvfs\tSet Freedom_Vector From Stack", "contents": "SFVFS ${1:x_2.14} ${2:y_2.14}" },
+    { "trigger": "sfvtca\tSet Freedom_Vector to Coordinate Axis [Y|X]", "contents": "SFVTCA[${1:Y}]" },
+    { "trigger": "sfvtl\tSet Freedom_Vector To Line [r|R]", "contents": "SFVTL[${1:r}] ${3:p2_uint32} ${2:p1_uint32}" },
+    { "trigger": "sfvtpv\tSet Freedom_Vector To Projection_Vector", "contents": "SFVTPV" },
+    { "trigger": "sloop\tSet LOOP variable", "contents": "SLOOP ${1:count_uint32" },
+    { "trigger": "smd\tSet Minimum_Distance", "contents": "SMD ${1:value_F26Dot6}" },
+    { "trigger": "spvfs\tSet Projection_Vector From Stack", "contents": "SPVFS ${1:x_2.14} ${2:y_2.14}" },
+    { "trigger": "spvtca\tSet Projection_Vector To Coordinate Axis [Y|X]", "contents": "SPVTCA[${1:Y}]" },
+    { "trigger": "spvtl\tSet Projection_Vector To Line [r|R]", "contents": "SPVTL[${1:r}] ${3:p2_uint32} ${2:p1_uint32}" },
+    { "trigger": "sround\tSuper Round", "contents": "S45ROUND ${1:value_uint32}" },
+    { "trigger": "srp0\tSet Reference Point 0", "contents": "SRP0 ${1:p_uint32}" },
+    { "trigger": "srp1\tSet Reference Point 1", "contents": "SRP1 ${1:p_uint32}" },
+    { "trigger": "srp2\tSet Reference Point 2", "contents": "SRP2 ${1:p_uint32}" },
+    { "trigger": "ssw\tSet Single_Width", "contents": "SSW ${1:value_FUnits}" },
+    { "trigger": "sswci\tSet Single_Width_Cut_In", "contents": "SSWCI ${1:value_F26dot6}" },
+    { "trigger": "svtca\tSet Vectors To Coordinate Axis [Y|X]", "contents": "SVTCA[${1:Y}]" },
+    { "trigger": "szp0\tSet Zone Pointer 0", "contents": "SZP0 ${1:n}" },
+    { "trigger": "szp1\tSet Zone Pointer 1", "contents": "SZP1 ${1:n}" },
+    { "trigger": "szp2\tSet Zone Pointer 2", "contents": "SZP2 ${1:n}" },
+    { "trigger": "szps\tSet Zone Pointers", "contents": "SZPS ${1:n}" },
+
+    /* Logic */
+
+    /* Misc */
+
+    /* Outlines */
+    { "trigger": "alignpts\tAlign points", "contents": "ALIGNPTS ${1:p2_uint32} ${2:p1_uint32}" },
+    { "trigger": "alignrp\tAlign relative point", "contents": "ALIGNRP ${1:p_uint32}  # uses loop" },
+    { "trigger": "flippt\tFlip point", "contents": "FLIPPT ${1:p_uint32}  # uses loop" },
+    { "trigger": "fliprgoff\tFlip range off", "contents": "FLIPRGOFF ${1:lowpoint_uint32} ${2:highpoint_uint32}" },
+    { "trigger": "fliprgon\tFlip range on", "contents": "FLIPRGON ${1:lowpoint_uint32} ${2:highpoint_uint32}" },
+    { "trigger": "ip\tInterpolate point by the last relative stretch", "contents": "IP ${1:p_uint32}  # uses loop" },
+    { "trigger": "isect\tMoves point p to the intersection of two lines", "contents": "ISECT ${1:p_uint32} ${2:a0_uint32} ${3:a1_uint32} ${4:b0_uint32} ${5:b1_uint32}" },
+    { "trigger": "iup\tInterpolate untouched points [Y|X]", "contents": "IUP[${1:Y}]" },
+    { "trigger": "mdap\tMove direct absolute point [r|R]", "contents": "MDAP[${1:R}] ${2:p_uint32}" },
+    { "trigger": "mdrp\tMove direct relative point [m|M d|D r|R Gr|Bl|Wh]", "contents": "MDRP[${1:MDRGr}] ${2:p_uint32}" },
+    { "trigger": "miap\tMove indirect absolute point [r|R]", "contents": "MIAP[${1:R}] ${2:p_uint32} ${3:cvt_uint32}" },
+    { "trigger": "mirp\tMove indirect relative point [m|M d|D r|R Gr|Bl|Wh]", "contents": "MIRP[${1:MDRGr}] ${2:p_uint32} ${3:cvt_uint32}" },
+    { "trigger": "msirp\tMove stack-indirect relative point [m|M]", "contents": "MSIRP[${1:M}] ${2:p_uint32} ${3:dist_F26Dot6}" },
+    { "trigger": "shc\tShift Contour[2|1]", "contents": "SHC[${1:1}]${2:c_uint32}" },
+    { "trigger": "shp\tShift Point [2|1]", "contents": "SHP[${1:1}] ${2:p_uint32}  # uses loop" },
+    { "trigger": "shpix\tShift point by a pixel amount", "contents": "SHPIX ${2:p_uint32} ${1:amount_F26Dot6}  # uses loop" },
+    { "trigger": "shz\tShift zone by the last pt [2|1]", "contents": "SHZ[${1:1}] ${2:z_uint32}" },
+    { "trigger": "utp\tUntouch point", "contents": "UTP ${1:p_uint32}" },
+  ]
+}
