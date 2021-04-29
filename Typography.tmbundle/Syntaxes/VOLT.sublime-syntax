@@ -1,0 +1,104 @@
+%YAML 1.2
+---
+# http://www.sublimetext.com/docs/3/syntax.html
+name: VOLT Project
+file_extensions:
+  - vtp
+scope: text.volt
+contexts:
+  main:
+    - match: '(DEF_GLYPH)'
+      captures:
+        1: entity.name.key.volt
+      push: glyph_definition
+
+    - match: '(DEF_LOOKUP) "([^"]+)"'
+      captures:
+        1: entity.name.key.volt
+        2: string.quoted.double.volt.lookup.name
+      push: lookup_definition
+
+    - match: '(DEF_SCRIPT)'
+      captures:
+        1: entity.name.key.volt
+      push: script_definition
+
+    - match: '"'
+      scope: string.quoted.double.volt
+      push: string
+
+    - match: (0|[0-9]*)
+      captures:
+        1: constant.integer.volt
+
+    - match: (0|[0-9]*\.0|[0-9]*)
+      captures:
+        1: constant.float.volt
+
+  string:
+    - meta_scope: string.quoted.double.volt
+    - match: '\\[0-9]*'
+      scope: constant.character.escape.volt
+    - match: '"'
+      pop: true
+
+  glyph_definition:
+    - meta_scope: entity.name.glyph_definition.volt
+    - match: 'END_GLYPH'
+      pop: true
+
+  script_definition:
+    - meta_scope: entity.name.script_definition.volt
+    - match: '(NAME) "([^"]+)"'
+      captures:
+        1: entity.keyword.volt
+        2: string.quoted.double.volt.script.name
+    - match: '(TAG) "([A-Za-z0-9]+)"'
+      captures:
+        1: entity.keyword.volt
+        2: string.quoted.double.volt.script.tag
+    - match: 'DEF_LANGSYS'
+      captures:
+        1: entity.name.key.volt
+      push: langsys_definition
+    - match: 'END_SCRIPT'
+      pop: true
+
+  langsys_definition:
+    - meta_scope: entity.name.langsys_definition.volt
+    - match: '(NAME) "([^"]+)"'
+      captures:
+        1: entity.keyword.volt
+        2: string.quoted.double.volt.langsys.name
+    - match: '(TAG) "([A-Za-z0-9]+)"'
+      captures:
+        1: entity.keyword.volt
+        2: string.quoted.double.volt.langsys.tag
+    - match: '(DEF_FEATURE)'
+      captures:
+        1: entity.name.key.volt
+      push: feature_definition
+    - match: 'END_LANGSYS'
+      pop: true
+
+  lookup_definition:
+    - meta_scope: entity.name.lookup_definition.volt
+    - match: 'END_SUBSTITUTION|END_POSITION'
+      pop: true
+
+  feature_definition:
+    - meta_scope: entity.name.feature_definition.volt
+    - match: '(NAME) "([^"]+)"'
+      captures:
+        1: entity.keyword.volt
+        2: string.quoted.double.volt.feature.name
+    - match: '(TAG) "([A-Za-z0-9]+)"'
+      captures:
+        1: entity.keyword.volt
+        2: string.quoted.double.volt.feature.tag
+    - match: '(LOOKUP) "([^"]+)"$'
+      captures:
+        1: entity.keyword.volt
+        2: string.quoted.double.volt.lookup_reference.name
+    - match: 'END_FEATURE'
+      pop: true
