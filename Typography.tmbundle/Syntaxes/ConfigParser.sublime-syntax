@@ -1,0 +1,81 @@
+%YAML 1.2
+---
+name: ConfigParser
+file_extensions: [cfg]
+scope: text.configparser
+
+contexts:
+  main:
+    - include: comments
+    - include: section
+    - include: items
+    - include: hex
+    - include: string
+
+  section:
+    - match: '(\[)([A-Za-z0-9]+)(\])'
+      captures:
+        1: punctuation.definition.tag.begin.configparser
+        2: string.configparser.section.name
+        3: punctuation.definition.tag.end.configparser
+
+  items:
+    - include: comments
+    # - include: hex
+    # - meta_content_scope: string.configparser.item
+    - match: ([A-Za-z0-9]+)(:)
+      captures:
+        1: string.configparser.item.key
+        2: punctuation.separator.key-value.mapping.configparser
+      scope: string.configparser.item
+      push:
+        value
+
+    - match: (0x[0-9A-Fa-f]+)
+      scope: constant.numeric.integer.configparser
+  
+  key:
+    - include: hex
+    - include: string
+    # - meta_content_scope: string.configparser.item
+    - match: "(:)"
+      captures:
+        1: punctuation.separator.key-value.mapping.configparser
+      pop: true
+
+  value:
+    # - meta_content_scope: string.configparser.item
+    - include: dec
+
+    - match: " +#|^#"
+      scope: punctuation.definition.comment.configparser
+      push:
+        - meta_scope: comment.line.number-sign.configparser
+        - match: \n
+          pop: true
+
+    # - match: ".+"
+    #   scope: string.configparser.item.value
+
+    - match: "$"
+      pop: true
+
+  comments:
+    - match: " +#|^#"
+      scope: punctuation.definition.comment.configparser
+      push:
+        - meta_scope: comment.line.number-sign.configparser
+        - match: \n
+          pop: true
+
+  hex:
+    - match: "\b(0x[0-9A-Fa-f]+)\b"
+      scope: constant.numeric.integer.configparser
+
+  dec:
+    - match: ([0-9]+)"
+      scope: constant.numeric.integer.configparser
+  
+  string:
+    - match: "\b[A-Za-z0-9]+\b"
+      scope: string.configparser
